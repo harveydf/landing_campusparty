@@ -6,6 +6,7 @@ from .models import UserRegistered
 class LandingForm(forms.ModelForm):
     class Meta:
         model = UserRegistered
+        fields = ('name', 'email', )
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
