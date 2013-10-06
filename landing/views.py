@@ -1,11 +1,11 @@
 import json
 
 from django.http import HttpResponse
-from django.views.generic import CreateView
+from django.views.generic import CreateView, TemplateView
 
 from celery import chain
 
-from .models import UserRegistered
+from .models import UserRegistered, Scenario
 from .forms import LandingForm
 from .tasks import register_user, save_welcome_mail
 
@@ -24,6 +24,8 @@ class LandingCreateView(AjaxMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super(LandingCreateView, self).get_context_data(**kwargs)
+        scenarios = self.get_scenarios()
+        context.update(dict(scenarios=scenarios))
 
         if self.request.GET.get('token'):
             try:
@@ -34,6 +36,9 @@ class LandingCreateView(AjaxMixin, CreateView):
                 context.update(dict(name=user_registered.name))
 
         return context
+
+    def get_scenarios(self):
+        return Scenario.objects.all()
 
 
     def form_valid(self, form):
@@ -50,3 +55,19 @@ class LandingCreateView(AjaxMixin, CreateView):
         return self.render_to_json_response(form.errors, status=400)
 
 
+class ScenarioTemplateView(AjaxMixin, TemplateView):
+    template_name = 'scenario.html'
+
+    def get(self, request, *args, **kwargs):
+        context = super(ScenarioTemplateView, self).get_context_data(**kwargs)
+
+        try:
+            scenario = Scenario.objects.get(name=kwargs['scenario'])
+        except Scenario.DoesNotExits:
+            data = dict(error='Scenario not found.')
+            return self.render_to_json_response(data, stauts=404)
+
+        speakers = scenario.speaker_set.all()
+
+        context.update(dict(speakers=speakers))
+        return self.render_to_response(context)

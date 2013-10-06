@@ -11,6 +11,13 @@
             {{form.as_p}}
             <input type="submit" value="Send">
         </form>
+        <section>
+            {% for scenario in scenarios %}
+                <div>
+                    <a href="{% url 'speakers' scenario.name %}">{{scenario}}</a>
+                </div>
+            {% endfor %}
+        </section>
     </section>
 </body>
 </html>

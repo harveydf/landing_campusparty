@@ -3,6 +3,7 @@ from random import choice
 
 from django.db import models
 
+
 class UserRegistered(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
@@ -29,7 +30,7 @@ class UserRegistered(models.Model):
 
 class Mail(models.Model):
     subject = models.CharField(max_length=255)
-    to = models.TextField()
+    to = models.CharField(max_length=255)
     from_email = models.EmailField()
     template = models.CharField(max_length=255)
     data = models.TextField()
@@ -40,3 +41,19 @@ class Mail(models.Model):
 
     def __unicode__(self):
         return self.to
+
+
+class Scenario(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Speaker(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    scenario = models.ForeignKey(Scenario)
+
+    def __unicode__(self):
+        return self.name
