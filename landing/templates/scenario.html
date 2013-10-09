@@ -5,23 +5,21 @@
 <section class="conferencias">
     {% for speaker in speakers %}
 
-    <div class="lista">
-        <article class="conferencia">
-            <div class="header-conf">
-                <div class="imagen">
-                    <img src="{{MEDIA_PREFIX}}{{speaker.image}}" alt="">
-                </div>
-                <div class="nombre">
-                    <p>{{speaker.name}}</p>
-                </div>
+    <article class="conferencia">
+        <div class="header-conf">
+            <div class="imagen">
+                <img src="{{MEDIA_PREFIX}}{{speaker.image}}" width="86" alt="{{speaker.name}}">
             </div>
-            <div class="descripcion">
-                <p>
-                    {{speaker.description}}
-                </p>
+            <div class="nombre">
+                <p>{{speaker.name}}</p>
             </div>
+        </div>
+        <div class="descripcion">
+            <p>
+                {{speaker.description}}
+            </p>
+        </div>
 
-        </article>
-    </div>
+    </article>
     {% endfor %}
 </section>
