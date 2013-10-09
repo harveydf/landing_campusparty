@@ -13,7 +13,7 @@ $(function(){
 	$('.vermas').on('click',function(e){
 		e.preventDefault();
 		var $escenario = $(this).parents('.escenario'),
-			url = $(this).attr('href');
+		url            = $(this).attr('href');
 		$.get(url,function(data){
 			$escenario.addClass('active');
 			$escenario.after(data);

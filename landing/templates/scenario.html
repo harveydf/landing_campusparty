@@ -1,3 +1,7 @@
+{% load static %}
+{% get_media_prefix as MEDIA_PREFIX %}
+{% get_static_prefix as STATIC_PREFIX %}
+
 <section class="conferencias">
     {% for speaker in speakers %}
 
@@ -5,15 +9,15 @@
         <article class="conferencia">
             <div class="header-conf">
                 <div class="imagen">
-                    <img src="/static/images/avatar.jpg" alt="">
+                    <img src="{{MEDIA_PREFIX}}{{speaker.image}}" alt="">
                 </div>
                 <div class="nombre">
-                    <p>Crear una landing page profesional</p>
+                    <p>{{speaker.name}}</p>
                 </div>
             </div>
             <div class="descripcion">
                 <p>
-                    En el taller crearemos una aplicación completa, utilizando Python/Django en el servidor, donde usaremos Celery para los procesos asíncronos y South para la migración de modelos.
+                    {{speaker.description}}
                 </p>
             </div>
 
