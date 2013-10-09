@@ -46,6 +46,8 @@ class Mail(models.Model):
 class Scenario(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='scenarios')
+    subtitle = models.CharField(max_length=255)
+    description = models.TextField()
 
     def __unicode__(self):
         return self.name
