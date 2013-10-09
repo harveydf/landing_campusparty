@@ -7,7 +7,7 @@ $(function(){
 			data = $form.serialize();
 		$.post(url,data,function(data){
 			console.log(data);
-			$('.invitacion').text('Gracias por registrarte'+data.name);
+			$('.invitacion').text('Gracias por registrarte '+data.name).addClass('finish');
 		});
 	});
 	$('.vermas').on('click',function(e){
@@ -15,7 +15,8 @@ $(function(){
 		var $escenario = $(this).parents('.escenario'),
 			url = $(this).attr('href');
 		$.get(url,function(data){
-			$escenario.after($(data).slideDown());
+			$escenario.addClass('active');
+			$escenario.after(data);
 		});
 	});
 

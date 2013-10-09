@@ -15,6 +15,7 @@ body{background:#fff;font-family:'Open Sans',sans-serif;font-size:16px;font-weig
 .header .texto{font-size:17px;font-weight:300}
 .header .degradado{background:-webkit-gradient(linear, left top, left bottom, color-stop(0.65, rgba(255,255,255,0)), color-stop(0.99, #fff), color-stop(0.99, rgba(255,255,255,0)));background:-webkit-linear-gradient(top, rgba(255,255,255,0) 65%, #fff 99%, rgba(255,255,255,0) 99%);background:-moz-linear-gradient(top, rgba(255,255,255,0) 65%, #fff 99%, rgba(255,255,255,0) 99%);background:-o-linear-gradient(top, rgba(255,255,255,0) 65%, #fff 99%, rgba(255,255,255,0) 99%);background:-ms-linear-gradient(top, rgba(255,255,255,0) 65%, #fff 99%, rgba(255,255,255,0) 99%);background:linear-gradient(top, rgba(255,255,255,0) 65%, #fff 99%, rgba(255,255,255,0) 99%);position:absolute;left:0;right:0;top:0;bottom:0}
 .invitacion{margin:0 auto;margin-top:-50px;text-align:center;}
+.invitacion.finish{margin:10px 0;font-size:30px}
 .invitacion form{display:inline-block}
 .invitacion .titulo{color:#0c5e83;font-size:13px;font-weight:700;text-align:center;text-transform:uppercase}
 .invitacion .contForm1{background:rgba(0,0,0,0.1);border-radius:30px;padding:10px;overflow:hidden}
@@ -32,9 +33,10 @@ body{background:#fff;font-family:'Open Sans',sans-serif;font-size:16px;font-weig
 .invitacion input::-webkit-input-placeholder{color:#fff}
 .lista-escenarios{position:relative;width:328px;display:inline-block;}
 .lista-escenarios:nth-child(odd){margin-right:50px}
-.escenarios{margin-top:50px;text-align:center;max-width:960px;margin:0 auto;}
+.escenarios{margin-top:50px;text-align:center;}
 .escenarios p{color:#898989;font-size:17px}
-.escenarios .escenario{text-align:center;margin:10px;}
+.escenarios .escenario{margin:0 auto;padding:10px;max-width:960px;position:relative;text-align:center;}
+.escenarios .escenario.active:after{border-bottom:10px solid #eaeaea;border-left:10px solid transparent;border-right:10px solid transparent;bottom:0;content:"";left:50%;position:absolute}
 .escenarios .escenario .nombre{color:#0b64ad;font-size:20px;text-transform:uppercase}
 .escenarios .escenario .imagen{margin:10px 0}
 .escenarios .escenario .texto{margin-top:20px}

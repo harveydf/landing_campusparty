@@ -4,3 +4,4 @@
 *.rdb
 
 landing_campusparty/settings.py
+scenarios/
