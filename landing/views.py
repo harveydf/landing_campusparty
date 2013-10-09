@@ -69,5 +69,9 @@ class ScenarioTemplateView(AjaxMixin, TemplateView):
 
         speakers = scenario.speaker_set.all()
 
+        if not speakers:
+            return self.render_to_json_response({'error': 'Speakers not found.'}, status=400)
+
+
         context.update(dict(speakers=speakers))
         return self.render_to_response(context)
