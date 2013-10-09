@@ -13,6 +13,8 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+# LANDING_CAMPUSPARTY_SECRET_KEY="_skkgs*_o((v@$t2+9xpu8&*mjz1j3#bo+@q)1q$3wekgf76+_"
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.

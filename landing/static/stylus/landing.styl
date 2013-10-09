@@ -1,0 +1,212 @@
+@import "iconos.styl"
+@import "nib/gradients"
+
+azul = #1080C4
+*
+	margin 0
+
+body
+	background white
+	font-family 'Open Sans', sans-serif
+	font-size 16px
+	font-weight 300
+.clearfix
+	display block
+	clear both
+	content ""
+.imagen
+	img 
+		vertical-align top
+.contenedor
+	max-width 960px
+	margin 0 auto
+
+.header
+	background url('../images/cpheader.jpg') center
+	color white
+	padding 30px 0 100px 0
+	position relative
+	text-align center
+	h1
+		font-size 58px
+		line-height 58px
+		margin-bottom 20px
+		span
+			display block
+			font-size 42px
+			font-weight 300
+			text-transform uppercase
+	.contenido
+		max-width 420px
+		margin 0 auto
+	.texto
+		font-size 17px
+		font-weight 300
+	.degradado
+		background linear-gradient(top, rgba(white,0) 65%, white 99%, rgba(white,0) 99%)
+		position absolute
+		left 0
+		right 0
+		top 0
+		bottom 0
+.invitacion
+	margin 0 auto
+	margin-top -50px
+	text-align center
+	form 
+		display inline-block
+
+	.titulo
+		color #0C5E83
+		font-size 13px
+		font-weight 700
+		text-align center
+		text-transform uppercase
+	.contForm1
+		@extends .clearfix
+		background rgba(black,.1.5)
+		border-radius 30px
+		padding 10px
+	.name
+	.mail
+		float left
+		padding 5px 5px 5px 40px
+		position relative
+		width 300px
+		&:before
+			color #A3C4D7
+			font-size 18px
+			left 15px
+			position absolute
+			top 10px
+	.name
+		background #1481BF
+		border-radius 20px 0 0 20px
+		input
+			background #1B85C1
+	.mail
+		background #0D5F84
+		border-radius 0
+		&:before
+			left 10px
+		input 
+			background #1C6A8C
+	.submit
+		color white
+		float left
+		position relative
+		width 50px
+		&:before
+			color #A3C4D7
+			font-size 18px
+			left 15px
+			position absolute
+			top 10px
+		input
+			background #1277AD
+			border-radius 0 20px 20px 0
+			cursor pointer
+			line-height 37px
+	input
+		border none
+		box-sizing border-box
+		color white
+		font-size 17px
+		line-height 30px
+		outline 0
+		padding-left 10px
+		width 100%
+	input::-webkit-input-placeholder
+		color white
+.lista-escenarios
+	position relative
+	width 328px
+	display inline-block
+	&:nth-child(odd)
+		margin-right 50px
+.escenarios
+	margin-top 50px
+	text-align center
+	p
+		color #898989
+		font-size 17px
+	.escenario
+		text-align center
+		margin 10px
+		.nombre
+			color #0B64AD
+			font-size 20px
+			text-transform uppercase
+		.imagen
+			margin 10px 0
+		.texto
+			margin-top 20px
+		.slogan
+			color azul
+			font-size 18px
+			font-style italic
+			font-weight 300
+		.vermas
+			background white
+			color azul
+			display inline-block
+			font-size 15px
+			position relative
+			text-decoration none
+			padding 5px 15px
+			font-style italic
+			&:after
+				border-bottom 1px solid azul
+				content ""
+				left 100%
+				position absolute
+				top 16.5px
+				display block
+				width 50px
+			&:before
+				border-bottom 1px solid azul
+				content ""
+				right 100%
+				position absolute
+				top 16.5px
+				display block
+				width 50px
+.conferencias
+	background #EAEAEA
+	left 0
+	position absolute
+	right 0
+	text-align center
+	top 100%
+	z-index 1
+	.header-conf
+		margin-bottom 10px
+		&:after
+			@extends .clearfix
+	.conferencia
+		display inline-block
+		font-style italic
+		margin 20px
+		text-align left
+		width 400px
+		.imagen
+			float left
+		.nombre
+			float left
+			margin-left 15px
+			height 60px
+			position relative
+			&:after
+				display block
+				content ""
+				height 2px
+				background linear-gradient(left, 0% #FEDF4C,55% #FEDF4C, 55% #1174F6, 77% #1174F6,77% #E92019)
+				position absolute
+				bottom 0
+				width 100%
+			p
+				color azul
+		.descripcion
+			font-size 16px
+			color #898989
+

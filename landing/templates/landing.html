@@ -2,22 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Landing</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
+    <title>Bienvenido a Campus Party</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/css/landing.css"/>
 </head>
 <body>
-    <section>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{form.as_p}}
-            <input type="submit" value="Send">
-        </form>
-        <section>
-            {% for scenario in scenarios %}
-                <div>
-                    <a href="{% url 'speakers' scenario.name %}">{{scenario}}</a>
+    <header class="header">
+        <div class="contenido">
+            <h1 class="titulo">
+                <strong>Campus Party</strong><span>Colombia/06</span>
+            </h1>
+            <p class="texto">
+                EL Mayor festival tecnológico donde se unen innovación, creatividad, ciencia y entretenimiento digital. Nuestro objetivo es crear la mayor comunidad Geek de la tierra y difundir el conocimiento.
+            </p>
+        </div>
+        <div class="degradado"></div>
+    </header>
+    <section class="contenedor">
+        <section class="invitacion">
+            <h2 class="titulo">
+                Recibe toda la información
+            </h2>
+            <form action="" method="post">
+                <div class="contForm1">
+                    <div class="contForm2">
+                        <div class="name icon-user">
+                            <input type="text" id="id_name" name="name" required placeholder="Nombre">
+                        </div>
+                        <div class="mail icon-at">
+                            <input type="text" id="id_name" name="email" required placeholder="Mail">
+                        </div>
+                        <div class="submit icon-check">
+                            <input type="submit" value=""/>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
+            </form>
         </section>
     </section>
+    
+        <section class="escenarios">
+            {% for i in "0000" %}
+            <div class="lista-escenarios">
+                <article class="escenario">
+                    <h2 class="nombre">
+                        Escenario Pitagoras
+                    </h2>
+                    <h3 class="slogan">
+                        Las matematicas como base del futuro
+                    </h3>
+                    <div class="imagen">
+                        <img src="/static/images/escenario.jpg" alt="">
+                    </div>
+                    <div class="texto">
+                        <p>
+                            El nombre de Pitágoras ha quedado profundamente ligado a sus descubrimientos sobre las matemáticas, la geometría y la aritmética. Por ello, los programadores tienen mucho que agradecerle a él y a sus teorías.
+                        </p>
+                    </div>
+                    <a href="#" class="vermas">
+                        ver más
+                    </a>
+                </article>
+                <section class="conferencias">
+                    <div class="lista">
+                        {% for i in "0000" %}
+                        <article class="conferencia">
+                            <div class="header-conf">
+                                <div class="imagen">
+                                    <img src="/static/images/avatar.jpg" alt="">
+                                </div>
+                                <div class="nombre">
+                                    <p>Crear una landing page profesional</p>
+                                </div>
+                            </div>
+                            <div class="descripcion">
+                                <p>
+                                    En el taller crearemos una aplicación completa, utilizando Python/Django en el servidor, donde usaremos Celery para los procesos asíncronos y South para la migración de modelos.
+                                </p>
+                            </div>
+
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div>
+            
+            {% endfor %}
+        </section>
+
+        
 </body>
 </html>
