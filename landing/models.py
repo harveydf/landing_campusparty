@@ -45,6 +45,7 @@ class Mail(models.Model):
 
 class Scenario(models.Model):
     name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='scenarios')
 
     def __unicode__(self):
         return self.name
@@ -53,6 +54,7 @@ class Scenario(models.Model):
 class Speaker(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(upload_to='speakers')
     scenario = models.ForeignKey(Scenario)
 
     def __unicode__(self):
