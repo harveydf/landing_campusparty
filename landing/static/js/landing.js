@@ -12,12 +12,16 @@ $(function(){
 	});
 	$('.vermas').on('click',function(e){
 		e.preventDefault();
-		var $escenario = $(this).parents('.escenario'),
-		url            = $(this).attr('href');
-		$.get(url,function(data){
-			$escenario.addClass('active');
-			$escenario.after(data);
-		});
+		var $boton = $(this);
+		var $escenario = $boton.parents('.escenario');
+		if(!$escenario.hasClass('active')){
+			var url  = $boton.attr('href');
+			$.get(url,function(data){
+				$escenario.addClass('active');
+				$escenario.after(data);
+			});
+		}
+		
 	});
 
 

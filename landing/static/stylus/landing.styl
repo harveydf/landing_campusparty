@@ -49,6 +49,7 @@ body
 		right 0
 		top 0
 		bottom 0
+
 .invitacion
 	margin 0 auto
 	margin-top -50px
@@ -71,14 +72,12 @@ body
 		border-radius 30px
 		padding 10px
 		overflow hidden
-	// .contForm2
-	// 	@extends .clearfix
 	.name
 	.mail
 		float left
+		width 300px
 		padding 5px 5px 5px 40px
 		position relative
-		width 300px
 		&:before
 			color #A3C4D7
 			font-size 18px
@@ -113,6 +112,7 @@ body
 			border-radius 0 20px 20px 0
 			cursor pointer
 			line-height 37px
+			font-size 0
 	input
 		border none
 		box-sizing border-box
@@ -124,12 +124,7 @@ body
 		width 100%
 	input::-webkit-input-placeholder
 		color white
-.lista-escenarios
-	position relative
-	width 328px
-	display inline-block
-	&:nth-child(odd)
-		margin-right 50px
+
 .escenarios
 	margin-top 50px
 	text-align center
@@ -158,6 +153,8 @@ body
 			text-transform uppercase
 		.imagen
 			margin 10px 0
+			img
+				max-width 328px
 		.texto
 			margin-top 20px
 		.slogan
@@ -192,13 +189,8 @@ body
 				width 50px
 .conferencias
 	background #EAEAEA
-	// left 0
-	// position absolute
-	// right 0
 	text-align center
-	// top 100%
-	// z-index 1
-	// display none
+
 	.header-conf
 		margin-bottom 10px
 		&:after
@@ -208,7 +200,8 @@ body
 		font-style italic
 		margin 20px
 		text-align left
-		width 400px
+		vertical-align top
+		max-width 400px
 		.imagen
 			float left
 		.nombre
@@ -229,4 +222,28 @@ body
 		.descripcion
 			font-size 16px
 			color #898989
+
+@media screen and (max-width:900px)
+	
+	.invitacion
+		form
+			display block
+		.name
+		.mail
+			width auto
+			float none
+		.mail
+			border-radius 20px 0 0 20px
+		.submit
+			width 100px
+			margin 10px auto
+			float none
+			&:before
+				display none
+			input
+				font-size 16px
+				border-radius 20px
+				text-transform uppercase
+		.contForm1
+			border-radius 0
 

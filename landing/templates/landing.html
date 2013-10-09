@@ -3,7 +3,7 @@
 {% get_static_prefix as STATIC_PREFIX %}
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
@@ -38,7 +38,7 @@
                             <input type="text" id="id_name" name="email" required placeholder="Mail">
                         </div>
                         <div class="submit icon-check">
-                            <input type="submit" value=""/>
+                            <input type="submit" value="enviar"/>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
         </section>
 
         
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="{{STATIC_PREFIX}}js/jquery-2.0.3.min.js"></script>
     <script src="{{STATIC_PREFIX}}js/csrf_ajax.js"></script>
     <script src="{{STATIC_PREFIX}}js/landing.js"></script>
 </body>
