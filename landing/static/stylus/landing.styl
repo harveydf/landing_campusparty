@@ -63,10 +63,12 @@ body
 		text-align center
 		text-transform uppercase
 	.contForm1
-		@extends .clearfix
 		background rgba(black,.1.5)
 		border-radius 30px
 		padding 10px
+		overflow hidden
+	// .contForm2
+	// 	@extends .clearfix
 	.name
 	.mail
 		float left
@@ -127,12 +129,16 @@ body
 .escenarios
 	margin-top 50px
 	text-align center
+	max-width 960px
+	margin 0 auto
 	p
 		color #898989
 		font-size 17px
 	.escenario
 		text-align center
 		margin 10px
+		// background red
+
 		.nombre
 			color #0B64AD
 			font-size 20px
@@ -173,12 +179,13 @@ body
 				width 50px
 .conferencias
 	background #EAEAEA
-	left 0
-	position absolute
-	right 0
+	// left 0
+	// position absolute
+	// right 0
 	text-align center
-	top 100%
-	z-index 1
+	// top 100%
+	// z-index 1
+	// display none
 	.header-conf
 		margin-bottom 10px
 		&:after

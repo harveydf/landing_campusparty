@@ -2,3 +2,5 @@
 *.pyc
 
 *.rdb
+
+landing_campusparty/settings.py

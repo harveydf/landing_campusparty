@@ -1,3 +1,7 @@
+{% load static %}
+{% get_media_prefix as MEDIA_PREFIX %}
+{% get_static_prefix as STATIC_PREFIX %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,7 +9,7 @@
     <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1">
     <title>Bienvenido a Campus Party</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/css/landing.css"/>
+    <link rel="stylesheet" href="{{STATIC_PREFIX}}css/landing.css"/>
 </head>
 <body>
     <header class="header">
@@ -24,7 +28,7 @@
             <h2 class="titulo">
                 Recibe toda la información
             </h2>
-            <form action="" method="post">
+            <form action="{% url 'campus' %}" method="post" class="formulario">
                 <div class="contForm1">
                     <div class="contForm2">
                         <div class="name icon-user">
@@ -41,56 +45,35 @@
             </form>
         </section>
     </section>
-    
-        <section class="escenarios">
-            {% for i in "0000" %}
-            <div class="lista-escenarios">
-                <article class="escenario">
-                    <h2 class="nombre">
-                        Escenario Pitagoras
-                    </h2>
-                    <h3 class="slogan">
-                        Las matematicas como base del futuro
-                    </h3>
-                    <div class="imagen">
-                        <img src="/static/images/escenario.jpg" alt="">
-                    </div>
-                    <div class="texto">
-                        <p>
-                            El nombre de Pitágoras ha quedado profundamente ligado a sus descubrimientos sobre las matemáticas, la geometría y la aritmética. Por ello, los programadores tienen mucho que agradecerle a él y a sus teorías.
-                        </p>
-                    </div>
-                    <a href="#" class="vermas">
-                        ver más
-                    </a>
-                </article>
-                <section class="conferencias">
-                    <div class="lista">
-                        {% for i in "0000" %}
-                        <article class="conferencia">
-                            <div class="header-conf">
-                                <div class="imagen">
-                                    <img src="/static/images/avatar.jpg" alt="">
-                                </div>
-                                <div class="nombre">
-                                    <p>Crear una landing page profesional</p>
-                                </div>
-                            </div>
-                            <div class="descripcion">
-                                <p>
-                                    En el taller crearemos una aplicación completa, utilizando Python/Django en el servidor, donde usaremos Celery para los procesos asíncronos y South para la migración de modelos.
-                                </p>
-                            </div>
 
-                        </article>
-                        {% endfor %}
-                    </div>
-                </section>
-            </div>
+        <section class="escenarios">
+            {% for scenario in scenarios %}
+            <article class="escenario">
+                <h2 class="nombre">
+                    {{scenario.name}}
+                </h2>
+                <h3 class="slogan">
+                    {{scenario.subtitle}}
+                </h3>
+                <div class="imagen">
+                    <img src="{{MEDIA_PREFIX}}{{scenario.image}}" alt="{{scenario.name}}">
+                </div>
+                <div class="texto">
+                    <p>
+                        {{scenario.description}}
+                    </p>
+                </div>
+                <a href="{% url 'speakers' scenario.name %}" class="vermas">
+                    ver más
+                </a>
+            </article>
             
             {% endfor %}
         </section>
 
         
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="{{STATIC_PREFIX}}js/csrf_ajax.js"></script>
+    <script src="{{STATIC_PREFIX}}js/landing.js"></script>
 </body>
 </html>
